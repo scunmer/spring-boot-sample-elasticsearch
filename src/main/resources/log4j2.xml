@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p %c{1}:%L - %m%n</pattern>
+            </PatternLayout>
+        </Console>
+        <File name="File" fileName="logs/component.log">
+            <PatternLayout>
+                <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p %c{1}:%L - %m%n</pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.companyname" level="INFO" />
+        <Logger name="org.springframework" level="INFO" />
+        <Logger name="org.elasticsearch" level="INFO" />
+        <Root level="INFO">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>
